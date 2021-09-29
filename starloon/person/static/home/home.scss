@@ -1,0 +1,238 @@
+figure {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  border: {
+    width: 10px;
+    style: solid;
+    top-color: #ccc;
+    bottom-color: #efefef;
+    left-color: #ddd;
+    right-color: #ddd;
+  }
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset, 0 5px 20px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  &:before {
+    box-shadow: 0 0 5px black inset;
+    border: 30px solid #ddc;
+    z-index: -2;
+  }
+  &:after {
+    background: transparent;
+    border-top-left-radius: 300% 300%;
+    box-shadow: -20px -20px 100px rgba(255, 255, 255, 0.5);
+    z-index: -1;
+  }
+  figcaption {
+    position: absolute;
+    bottom: 6px;
+    right: 30px;
+    padding: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    text-align: center;
+    font-family: cursive;
+    font-size: 16px;
+    background: white;
+    max-width: calc(100% - 60px);
+    transition: 0.3s;
+    transform-origin: bottom right;
+    transform: scale(0.6);
+    cursor: -webkit-zoom-in;
+    &:hover {
+      transform: scale(1);
+    }
+  }
+  img {
+    height: 50vmin;
+    width: auto;
+    vertical-align: bottom;
+    position: relative;
+    z-index: -3;
+  }
+}
+.visiter {
+  position: relative;
+  left: -8%;
+  top: 200px;
+}
+:root {
+  text-align: center;
+  box-sizing: border-box;
+  padding: 45px;
+  background: url("https://subtlepatterns.com/patterns/concrete_seamless.png")
+    center;
+  white-space: nowrap;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.profile_image {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  border: 5px solid black;
+  position: absolute;
+  top: 40px;
+  margin: 20px;
+}
+
+//Pagination
+
+@keyframes cdp-in {
+  from {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.cdp {
+  position: relative;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0;
+  z-index: 6;
+  margin: 50px 0;
+
+  animation: cdp-in 500ms ease both;
+
+  &_i {
+    font-size: 14px;
+    text-decoration: none;
+
+    transition: background 250ms;
+
+    display: inline-block;
+    text-transform: uppercase;
+    margin: 0 3px 6px;
+    height: 38px;
+    min-width: 38px;
+    border-radius: 38px;
+    border: 2px solid rgb(0, 0, 0);
+    line-height: 38px;
+    padding: 0;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    display: none;
+
+    &:first-child,
+    &:last-child {
+      padding: 0 16px;
+      margin: 0 12px 6px;
+    }
+
+    &:last-child,
+    &:nth-child(2),
+    &:nth-last-child(2) {
+      display: inline-block;
+    }
+  }
+
+  &_i:hover {
+    background-color: #000;
+    color: #fff;
+  }
+
+  &:not([actpage="1"]) &_i:nth-child(1) {
+    display: inline-block;
+  }
+}
+@for $i from 1 through 80 {
+  .cdp[actpage="#{$i}"] {
+    // 3 before
+    .cdp_i:nth-child(#{$i - 2}):not(:first-child):not(:nth-child(2)) {
+      display: inline-block;
+      pointer-events: none;
+      color: transparent;
+      border-color: transparent;
+      width: 50px;
+      &:after {
+        content: "...";
+        color: rgb(0, 0, 0);
+        font-size: 32px;
+        margin-left: -6px;
+      }
+    }
+    // 2 before
+    .cdp_i:nth-child(#{$i - 1}):not(:first-child) {
+      display: inline-block;
+    }
+    // before
+    .cdp_i:nth-child(#{$i}):not(:first-child) {
+      display: inline-block;
+    }
+    // active
+    .active {
+      border: 1px solid blue;
+      color: rgb(0, 0, 0);
+    }
+    // next
+    .cdp_i:nth-child(#{$i + 2}):not(:last-child) {
+      display: inline-block;
+    }
+    // 2 next
+    .cdp_i:nth-child(#{$i + 3}):not(:last-child) {
+      display: inline-block;
+    }
+    // 3 next
+    .cdp_i:nth-child(#{$i + 4}):not(:last-child):not(:nth-last-child(2)) {
+      display: inline-block;
+      pointer-events: none;
+      color: transparent;
+      border-color: transparent;
+      width: 50px;
+      &:after {
+        content: "...";
+        color: rgb(0, 0, 0);
+        font-size: 32px;
+        margin-left: -6px;
+      }
+    }
+  }
+}
+
+.prevNex {
+  background: rgb(119, 185, 230);
+}
+
+// bar de recherche
+
+.bar-de-recherche {
+  input {
+    width: 50%;
+    border-radius: 30px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    &:hover,
+    &.focus {
+      box-shadow: rgba(45, 175, 226, 0.25) 0px 14px 28px,
+        rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    }
+  }
+  .fa-search {
+    position: relative;
+    left: 49%;
+    bottom: 0px;
+  }
+}
+
+// Footer main
