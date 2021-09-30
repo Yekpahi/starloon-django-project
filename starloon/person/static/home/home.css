@@ -62,8 +62,13 @@ figure img {
 
 .visiter {
   position: relative;
-  left: -8%;
-  top: 200px;
+  left: -20%;
+  top: 180px;
+  color: white;
+  text-decoration: none;
+  background: #5e03f0;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 :root {
@@ -3598,7 +3603,12 @@ figure img {
   background: #77b9e6;
 }
 
+.bar-de-recherche {
+  position: relative;
+  top: 550px;
+}
 .bar-de-recherche input {
+  height: 50px;
   width: 50%;
   border-radius: 30px;
   border: none;
@@ -3611,4 +3621,57 @@ figure img {
   position: relative;
   left: 49%;
   bottom: 0px;
+}
+
+.button-searcher {
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+  color: #fff;
+  background-color: #7373a8;
+}
+
+.civilite {
+  position: absolute;
+  width: 30%;
+  left: 35%;
+  bottom: 65px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+.civilite ul {
+  list-style: none;
+  text-align: center;
+}
+.civilite ul li {
+  display: inline-block;
+}
+.civilite ul li h3 {
+  color: #0c0b0b;
+  font-size: 30px;
+  margin: 0;
+}
+.civilite ul li img {
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+}
+.civilite h5 {
+  text-align: center;
+  margin: 0;
+  color: #3a3a36;
+}
+
+.containerPost {
+  position: absolute;
+  left: 22%;
+  display: flex;
+  flex-direction: row;
+}
+
+.cdp {
+  position: relative;
+  top: 600px;
 }/*# sourceMappingURL=home.css.map */

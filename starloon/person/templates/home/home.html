@@ -18,42 +18,59 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
     />
-
-    <link rel="stylesheet" href=" {% static 'home/home.css' %}" />
-
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
     <script src="{% static 'home/home.js' %}"></script>
     {% tailwind_css %}
+    <link rel="stylesheet" href=" {% static 'home/home.css' %}" />
+    <link rel="stylesheet" href=" {% static 'styles.css' %}" />
   </head>
   <body>
-    <ul>
-      <div>
-        {% for person in person_objects %}
+    <ul class="containerPost">
+      {% if persons %} 
+      {% for person in persons %} 
+   
+     <div class="cardPost">
         <figure class="portrait" title="Sample Image">
-          <img src="{{ person.image_url}}" alt="sample image" />
-          <img
-            class="profile_image"
-            src="{{ person.profile_image}}"
-            alt="sample image"
-          />
+          <img src="{{ person.coverUrl}}" alt="sample image" />
         </figure>
-        <a
-          href="{{person.slug}}"
-          class="
-            bg-blue-500
-            hover:bg-blue-700
-            text-white
-            font-bold
-            py-2
-            px-4
-            rounded-full
-            visiter
-          "
-        >
-          Visiter : {{ person.age}}
-        </a>
-        {% endfor %}
+        <a href="{{person.slug}}" class="visiter"> Visiter </a>
+        <div class="civilite">
+          <ul>
+            <li>
+              <h3>{{person.surname}}</h3>
+            </li>
+            <li><img src="{% static 'images/ok.png' %}" alt="My image" /></li>
+          </ul>
+           <h5>{{person.fullName}}</h5>
+        </div>
       </div>
+      {% endfor %} 
+      {% else %} 
+      {% for person in person_objects %}
+      <div class="cardPost">
+        <figure class="portrait" title="Sample Image">
+          <img src="{{ person.coverUrl}}" alt="sample image" />
+        </figure>
+        <a href="{{person.slug}}" class="visiter"> Visiter </a>
+        <div class="civilite">
+          <ul>
+            <li>
+              <h3>{{person.surname}}</h3>
+            </li>
+            <li><img src="{% static 'images/ok.png' %}" alt="My image" /></li>
+          </ul>
+
+          <h5>{{person.fullName}}</h5>
+        </div>
+      </div>
+
+      {% endfor %} 
+      {% endif %}
     </ul>
+    <!-- Pagination -->
     <div class="content_detail__pagination cdp" actpage="1">
       <a href="#!-1" class="cdp_i prevNex">prev</a>
       {% for i in paginator.page_range %}
@@ -67,10 +84,10 @@
       <a href="#!+1" class="cdp_i prevNex">next</a>
     </div>
 
-    <form class="bar-de-recherche">
+    <form class="bar-de-recherche" action="{% url 'search'%}" method="get">
       <i class="fa fa-search" style="font-size: 20px; color: red"></i>
-      <input name="item_name" id="person" type="text" />
-      <button class="" type="submit">Search</button>
+      <input name="query" id="id_q_small" type="text" />
+      <button class="button-searcher" type="submit">Search</button>
     </form>
 
     <footer class=""></footer>

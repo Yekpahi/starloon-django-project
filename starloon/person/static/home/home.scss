@@ -64,8 +64,13 @@ figure {
 }
 .visiter {
   position: relative;
-  left: -8%;
-  top: 200px;
+  left: -20%;
+  top: 180px;
+  color: white;
+  text-decoration: none;
+  background: rgb(94, 3, 240);
+  padding: 10px;
+  border-radius: 5px;
 }
 :root {
   text-align: center;
@@ -217,7 +222,10 @@ figure {
 // bar de recherche
 
 .bar-de-recherche {
+  position: relative;
+  top: 550px;
   input {
+    height: 50px;
     width: 50%;
     border-radius: 30px;
     border: none;
@@ -235,4 +243,60 @@ figure {
   }
 }
 
+.button-searcher {
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+  color: #fff;
+  background-color: rgb(115, 115, 168);
+}
+
+.civilite {
+  position: absolute;
+  width: 30%;
+  left: 35%;
+  bottom: 65px;
+  padding:10px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  overflow: hidden;
+ul {
+  list-style: none;
+  text-align: center;
+
+  li {
+    display: inline-block;
+    h3 {
+      color: #0c0b0b;
+      font-size: 30px;
+      margin: 0;
+    }
+    img {
+      height: 30px;
+      width: 30px;
+      border-radius: 15px;
+  
+    }
+  }
+}
+  
+  h5{
+    text-align: center;
+    margin:0;
+    color: rgb(58, 58, 54);
+  }
+ 
+}
+
+.containerPost {
+  position: absolute;
+  left: 22%;
+  display: flex;
+  flex-direction: row;
+}
+
+.cdp {
+  position: relative;
+  top: 600px;
+}
 // Footer main
