@@ -17,14 +17,6 @@ def index(request) :
       'page_number':int(page_number),
       })
 
-def detail(request, slug) :
-    person = Person.objects.get(slug=slug)
-
-    context = {
-     'person': person
-    }
-    return render(request, 'details/details.html', context)
-
 def searchBar(request):
     if request.method == "GET":
         query = request.GET.get("query")
@@ -34,3 +26,13 @@ def searchBar(request):
         else:
             print("No information to show")
             return request(request, 'home/home.html')
+
+
+def detail(request, slug) :
+    person = Person.objects.get(slug=slug)
+
+    context = {
+     'person': person
+    }
+    return render(request, 'details/details.html', context)
+

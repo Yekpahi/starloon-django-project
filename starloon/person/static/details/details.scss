@@ -108,18 +108,8 @@ body {
     }
   }
 
-  .aside_list{
-    position: relative;
-    top: 100px;
-    ul {
-      width: 10%;
-      background:rgb(215, 192, 236);
-
-    }
-  }
-
   .cardpresentation {
-    background-color: aliceblue;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin-left: auto;
     margin-right: auto;
     width: 70%;
@@ -137,11 +127,13 @@ body {
   }
 
   .cardside {
-    padding: 30px;
-    background-color: rgb(212, 56, 28);
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     width: 20%;
     position: absolute;
-    left: 22.5%;
+    left: 8%;
+    top: 100px;
+
 
     img{
       width: 100%;
@@ -149,4 +141,35 @@ body {
     }
     
   
+  }
+  .resumedetail {
+    padding: 5px;
+    margin-top: 10px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    width: 20%;
+    position: absolute;
+    left: 8%;
+    top: 520px;
+  }
+
+
+  .cardhaut {
+    position: relative;
+    top: 100px;
+  }
+ 
+  .contenu-du-centre {
+    
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+   
+    margin-bottom: 20px;
+  }
+
+  .card1 {
+    margin-top: 10px;
+    padding: 30px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
   }
