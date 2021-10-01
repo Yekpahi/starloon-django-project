@@ -17,6 +17,7 @@ class Person(models.Model):
     modified_at = models.DateTimeField(auto_now=True, editable=False)
     published = models.BooleanField(default=False)
     coverUrl = models.URLField(null=True, blank=True)
+    personImage = models.URLField(null=True, blank=True)
 
     
     def __str__(self):

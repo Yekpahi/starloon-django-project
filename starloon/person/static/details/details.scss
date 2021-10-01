@@ -173,3 +173,50 @@ body {
     width: 100%;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
   }
+
+  .program {
+    background: #666;
+    margin-top: 10px;
+    padding: 30px;
+    width: 60%;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    h4 {
+      color: #fbfbfb;
+    }
+  }
+
+  /* scroll bar programme*/
+
+  .program_wrapper {
+	width: 100%;
+	padding: 20px;
+	border: 1px solid black;
+	background: white;
+	display: grid;
+	grid-template-rows: 1fr auto;
+}
+
+button {
+	background: #ff0060;
+	color: white;
+	font-size: 1rem;
+	padding: 20px;
+	transition: all 0.2s;
+}
+
+button[disabled] {
+	opacity: 0;
+	transform: scale(0.5);
+}
+
+.terms-and-conditions {
+	overflow-y: scroll;
+}
+
+.headerPersonImage {
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  padding: 0;
+  margin: 0;
+}

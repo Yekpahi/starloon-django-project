@@ -10,3 +10,5 @@ $(".nav-link").click(function() {
         scrollTop: scrollAmount
     }, 1000);
 });
+
+// scrollbar
