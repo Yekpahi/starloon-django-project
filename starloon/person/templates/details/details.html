@@ -42,11 +42,17 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'index' %}">Accueil</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#bio">Créer un compte</a>
+          <li class="nav-item">
+          <a class="nav-link" href="#bio">Bonjour <span> {{request.user}}</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#gallery">se connecter</a>
+          <a class="nav-link" href="{% url 'register' %}">Créer un compte</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Se connecter</a>
+        </li>
+       <li class="nav-item">
+          <a class="nav-link" href="{% url 'logout' %}">Se deconnecter</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#achievements">Faire un don </a>
