@@ -30,7 +30,6 @@ def searchBar(request):
 
 def detail(request, slug) :
     person = Person.objects.get(slug=slug)
-
     context = {
      'person': person
     }

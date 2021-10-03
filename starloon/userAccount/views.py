@@ -2,16 +2,14 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.forms import inlineformset_factory
 from django.contrib.auth.forms import UserCreationForm
-
 from django.contrib.auth import authenticate, login, logout
-
 from django.contrib import messages
-
 from django.contrib.auth.decorators import login_required
+from .models import UserModel
 
 # Create your views here.
 from .models import *
-from .forms import  CreateUserForm
+from .forms import  CreateUserForm, UserForm
 
 def registerPage(request):
 	if request.user.is_authenticated:
@@ -29,7 +27,7 @@ def registerPage(request):
 			
 
 		context = {'form':form}
-		return render(request, 'userAccount/register.html', context)
+		return render(request, 'user/register.html', context)
 
 def loginPage(request):
 	if request.user.is_authenticated:
@@ -48,11 +46,28 @@ def loginPage(request):
 				messages.info(request, 'Username OR password is incorrect')
 
 		context = {}
-		return render(request, 'userAccount/login.html', context)
+		return render(request, 'user/login.html', context)
 
 def logoutUser(request):
 	logout(request)
 	return redirect('login')
 
 
+
+def userPage(request):
+
+	
+	return render(request, 'user/user.html')
+
+def accountSettings(request):
+	user = request.user
+	form = UserForm(instance=user)
+
+	if request.method == 'POST':
+		form = UserForm(request.POST, request.FILES,instance=user)
+		if form.is_valid():
+			form.save()
+
+	context = {'form':form}
+	return render(request, 'user/user.html', context)
 

@@ -1,0 +1,28 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  color: #000;
+}
+
+/*user-profile*/
+.user-profile .card {
+  border-radius: 10px;
+}
+.user-profile .card h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+.user-profile .card .card-header .profile_img {
+  width: 150px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 10px auto;
+  border: 10px solid #ccc;
+  border-radius: 50%;
+}
+.user-profile .card .card-body .side-menu .nav-link {
+  font-size: 16px;
+  color: #222;
+}/*# sourceMappingURL=user.css.map */
