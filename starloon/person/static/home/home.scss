@@ -256,39 +256,37 @@ figure {
   width: 30%;
   left: 35%;
   bottom: 65px;
-  padding:10px;
+  padding: 10px;
   border-radius: 10px;
   background-color: #ffffff;
   overflow: hidden;
-ul {
-  list-style: none;
-  text-align: center;
+  ul {
+    list-style: none;
+    text-align: center;
 
-  li {
-    display: inline-block;
-    h3 {
-      color: #0c0b0b;
-      font-size: 30px;
-      margin: 0;
-    }
-    img {
-      height: 30px;
-      width: 30px;
-      border-radius: 15px;
-  
+    li {
+      display: inline-block;
+      h3 {
+        color: #0c0b0b;
+        font-size: 30px;
+        margin: 0;
+      }
+      img {
+        height: 30px;
+        width: 30px;
+        border-radius: 15px;
+      }
     }
   }
-}
-  
-  h5{
+
+  h5 {
     text-align: center;
-    margin:0;
+    margin: 0;
     color: rgb(58, 58, 54);
   }
- 
 }
 
-.containerPost {
+.slides {
   position: absolute;
   left: 22%;
   display: flex;
@@ -298,5 +296,28 @@ ul {
 .cdp {
   position: relative;
   top: 600px;
+}
+
+.MainNav {
+  margin: 0;
+  padding: 10px;
+  background: rgb(250, 239, 239);
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+    li {
+      display: inline;
+      margin: 50px;
+     
+
+    }
+  }
+}
+.userImageHomme {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
 }
 // Footer main

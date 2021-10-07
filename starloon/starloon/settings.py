@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'starloon.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'starloondb',
+        'NAME': 'starloonDatabase',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',

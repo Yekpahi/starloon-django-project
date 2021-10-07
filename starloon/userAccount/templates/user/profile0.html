@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Page d'utilisateur</title>
     {% tailwind_css %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
@@ -19,13 +19,26 @@
         <div class="col-lg-4">
           <div class="card shadow-sm">
             <div class="card-header bg-transparent text-center">
-              <img class="profile_img" src="{{request.user.profile_pic.url}}" alt="">
-              <h3>Tohidul Islam Showrav <span class="badge badge-primary"><i class="zmdi zmdi-star-circle"></i> Platinum</span></h3>
+           {% if user.profile.profile_image %}
+            <img
+              class="userImageHomme"
+              src="{{user.profile.profile_image.url}}"
+              alt=""
+          />
+           {% else %}
+                <img
+              class="userImageHomme"
+              src="{% static 'images/ok.png' %}"
+              alt=""
+          />
+          {% endif %}
+              <h3>{{user.first_name}}
+                  {{user.last_name}} <span class="badge badge-primary"><i class="zmdi zmdi-star-circle"></i> Platinum</span></h3>
             </div>
             <div class="card-body">
-              <div class="card card-body shadow-sm bg-primary border-0 mb-3">
-                <h3 class="text-light text-center mb-0">Total Points <big class="text-warning">300</big></h3>
-              </div>
+              <a href = "{% url 'account'%}" class="card card-body shadow-sm bg-primary border-0 mb-3">
+                <h3 class="text-light text-center mb-0">Modifier profil</big></h3>
+              </a>
               <ul class="nav flex-column side-menu">
                 <li class="nav-item">
                   <a href="#" class="nav-link">Dashboard</a>
@@ -113,21 +126,6 @@
                   </td>
                 </tr>
               </table>
-            </div>
-          </div>
-          <div class="card shadow-sm">
-
-
-            <div class="card-header bg-transparent border-0">
-              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>History Edit</h3>
-            </div>
-            <div class="card-body pt-0">
-              <form method ="POST" action="#" enctype = "multpart/form-data">
-              {% csrf_token %}
-           {{form.as_p}}
-                
-               <button type="submit">Soumettre</button>
-              </form>
             </div>
           </div>
         </div>

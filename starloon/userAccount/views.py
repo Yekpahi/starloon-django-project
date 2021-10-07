@@ -5,11 +5,15 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import UserModel
+from .forms import UpdateUserForm, UpdateProfileForm
+from django.urls import reverse_lazy
+from django.contrib.auth.views import PasswordChangeView
+from django.contrib.messages.views import SuccessMessageMixin
+
 
 # Create your views here.
 from .models import *
-from .forms import  CreateUserForm, UserForm
+from .forms import  CreateUserForm
 
 def registerPage(request):
 	if request.user.is_authenticated:
@@ -20,8 +24,9 @@ def registerPage(request):
 			form = CreateUserForm(request.POST)
 			if form.is_valid():
 				form.save()
-				user = form.cleaned_data.get('username')
-				messages.success(request, 'Account was created for ' + user)
+				username  = form.cleaned_data.get('username')
+
+				messages.success(request, 'Account was created for ' + profile)
 
 				return redirect('login')
 			
@@ -53,21 +58,25 @@ def logoutUser(request):
 	return redirect('login')
 
 
+@login_required
+def profile(request):
+    if request.method == 'POST':
+        user_form = UpdateUserForm(request.POST, instance=request.user)
+        profile_form = UpdateProfileForm(request.POST, request.FILES, instance=request.user.profile)
 
-def userPage(request):
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            messages.success(request, 'Your profile is updated successfully')
+            return redirect(to='users-profile')
+    else:
+        user_form = UpdateUserForm(instance=request.user)
+        profile_form = UpdateProfileForm(instance=request.user.profile)
 
-	
-	return render(request, 'user/user.html')
+    return render(request, 'user/profile.html', {'user_form': user_form, 'profile_form': profile_form})
 
-def accountSettings(request):
-	user = request.user
-	form = UserForm(instance=user)
-
-	if request.method == 'POST':
-		form = UserForm(request.POST, request.FILES,instance=user)
-		if form.is_valid():
-			form.save()
-
-	context = {'form':form}
-	return render(request, 'user/user.html', context)
+class ChangePasswordView(SuccessMessageMixin, PasswordChangeView):
+    template_name = 'user/change_password.html'
+    success_message = "Successfully Changed Your Password"
+    success_url = reverse_lazy('index')
 

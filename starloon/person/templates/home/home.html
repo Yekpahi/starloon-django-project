@@ -28,48 +28,68 @@
     <link rel="stylesheet" href=" {% static 'styles.css' %}" />
   </head>
   <body>
-    <ul class="containerPost">
-      {% if persons %} 
-      {% for person in persons %} 
-   
-     <div class="cardPost">
-        <figure class="portrait" title="Sample Image">
-          <img src="{{ person.coverUrl}}" alt="sample image" />
-        </figure>
-        <a href="{{person.slug}}" class="visiter"> Visiter </a>
-        <div class="civilite">
-          <ul>
-            <li>
-              <h3>{{person.surname}}</h3>
-            </li>
-            <li><img src="{% static 'images/ok.png' %}" alt="My image" /></li>
-          </ul>
-           <h5>{{person.fullName}}</h5>
-        </div>
-      </div>
-      {% endfor %} 
-      {% else %} 
-      {% for person in person_objects %}
-      <div class="cardPost">
-        <figure class="portrait" title="Sample Image">
-          <img src="{{ person.coverUrl}}" alt="sample image" />
-        </figure>
-        <a href="{{person.slug}}" class="visiter"> Visiter </a>
-        <div class="civilite">
-          <ul>
-            <li>
-              <h3>{{person.surname}}</h3>
-            </li>
-            <li><img src="{% static 'images/ok.png' %}" alt="My image" /></li>
-          </ul>
+    <nav class="MainNav">
+      <ul>
+        <li>Nom du site</li>
+        <li>Créer un compte</li>
+        <li>Se connecter</li>
+        <li>se deconnecter</li>
+        <li>
+          <a href="{% url 'users-profile' %}">
+        
+            <img
+              class="userImageHomme"
+              src="{{ user.profile.avatar.url }}"
+              alt=""
+          />
+          {{ user.username }}
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <ul class="slides">
+    {% if persons %}
+  
+      {% for person in persons %}
 
+      <div class="slide">
+        <figure class="portrait" title="Sample Image">
+          <img src="{{ person.coverUrl}}" alt="sample image" />
+        </figure>
+        <a href="{{person.slug}}" class="visiter"> Visiter </a>
+        <div class="civilite">
+          <ul>
+            <li>
+              <h3>{{person.surname}}</h3>
+            </li>
+            <li><img src="{% static 'images/ok.png' %}" alt="My image" /></li>
+          </ul>
           <h5>{{person.fullName}}</h5>
         </div>
       </div>
-
       {% endfor %} 
-      {% endif %}
-    </ul>
+      {% else %}
+        {% for person in person_objects %}
+        <div class=" slide">
+          <figure class="portrait" title="Sample Image">
+            <img src="{{ person.coverUrl}}" alt="sample image" />
+          </figure>
+          <a href="{{person.slug}}" class="visiter"> Visiter </a>
+          <div class="civilite">
+            <ul>
+              <li>
+                <h3>{{person.surname}}</h3>
+              </li>
+              <li><img src="{% static 'images/ok.png' %}" alt="My image" /></li>
+            </ul>
+
+            <h5>{{person.fullName}}</h5>
+          </div>
+        </div>
+      {% endfor %}
+ 
+    {% endif %}
+  </ul>
     <!-- Pagination -->
     <div class="content_detail__pagination cdp" actpage="1">
       <a href="#!-1" class="cdp_i prevNex">prev</a>
@@ -96,3 +116,5 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   </body>
 </html>
+
+

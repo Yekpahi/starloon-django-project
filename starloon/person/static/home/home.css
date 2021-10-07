@@ -3664,7 +3664,7 @@ figure img {
   color: #3a3a36;
 }
 
-.containerPost {
+.slides {
   position: absolute;
   left: 22%;
   display: flex;
@@ -3674,4 +3674,26 @@ figure img {
 .cdp {
   position: relative;
   top: 600px;
+}
+
+.MainNav {
+  margin: 0;
+  padding: 10px;
+  background: #faefef;
+}
+.MainNav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+.MainNav ul li {
+  display: inline;
+  margin: 50px;
+}
+
+.userImageHomme {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
 }/*# sourceMappingURL=home.css.map */
