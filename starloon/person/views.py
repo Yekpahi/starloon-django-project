@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.db.models import Q
 from django.core.paginator import Paginator
 from .models import Person
@@ -7,7 +7,7 @@ import json
 
 def index(request) :
     person_objects = Person.objects.all()
-
+    user = request.user
     paginator = Paginator(person_objects, per_page=1)
     page_number = request.GET.get('page', 1)
     page_obj = paginator.get_page(page_number)
@@ -15,6 +15,7 @@ def index(request) :
       'person_objects': page_obj.object_list,
       'paginator' : paginator,
       'page_number':int(page_number),
+      'user' : user
       })
 
 def searchBar(request):
@@ -34,4 +35,3 @@ def detail(request, slug) :
      'person': person
     }
     return render(request, 'details/details.html', context)
-

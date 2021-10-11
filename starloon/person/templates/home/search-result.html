@@ -39,7 +39,7 @@
           <a href="{% url 'users-profile' %}">
         
             <img
-              class="userImageHomme"
+              class="userImageHome"
               src="{{ user.profile.avatar.url }}"
               alt=""
           />
@@ -55,7 +55,7 @@
 
       <div class="slide">
         <figure class="portrait" title="Sample Image">
-          <img src="{{ person.coverUrl.url}}" alt="sample image" />
+          <img src="{{ person.coverUrl}}" alt="sample image" />
         </figure>
         <a href="{{person.slug}}" class="visiter"> Visiter </a>
         <div class="civilite">
@@ -73,7 +73,7 @@
         {% for person in person_objects %}
         <div class=" slide">
           <figure class="portrait" title="Sample Image">
-            <img src="{{ person.coverUrl.url}}" alt="sample image" />
+            <img src="{{ person.coverUrl}}" alt="sample image" />
           </figure>
           <a href="{{person.slug}}" class="visiter"> Visiter </a>
           <div class="civilite">

@@ -1,6 +1,8 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from datetime import date
+from django.contrib.auth.models import User
+from PIL import Image
 
 
 # Create your models here.
@@ -16,9 +18,33 @@ class Person(models.Model):
     birth_date = models.DateField(blank=True, null=True)
     modified_at = models.DateTimeField(auto_now=True, editable=False)
     published = models.BooleanField(default=False)
-    coverUrl = models.URLField(null=True, blank=True)
-    personImage = models.URLField(null=True, blank=True)
+    coverUrl = models.ImageField(null=True, upload_to='person-cover/%Y/%m/%d')
+    personImage = models.ImageField(null=True, upload_to='person-profile/%Y/%m/%d')
+    detailscouverture = models.ImageField(null=True, upload_to='person-detailcouverture/%Y/%m/%d')
 
+    def save(self, *args, **kwargs):
+        super().save()
+
+        pers = Image.open(self.personImage.path)
+        cover = Image.open(self.coverUrl.path)
+        detail = Image.open(self.detailscouverture.path)
+
+        if pers.height > 100 or pers.width > 100:
+            new_pers = (100, 100)
+            pers.thumbnail(new_pers)
+            pers.save(self.personImage.path)
+
+        if cover.height > 250 or cover.width > 400:
+            new_cover = (250, 400)
+            cover.thumbnail(new_cover)
+            cover.save(self.coverUrl.path)
+
+        if detail.height > 250 or detail.width > 150:
+            new_detail = (200, 150)
+            detail.thumbnail(new_detail)
+            detail.save(self.detailscouverture.path)
+        
+        
     
     def __str__(self):
         return self.surname 
@@ -28,3 +54,5 @@ class Person(models.Model):
             # Newly created object, so set slug
             self.slug = slugify(self.fullName)
         super(Person, self).save(*args, **kwargs)
+
+    

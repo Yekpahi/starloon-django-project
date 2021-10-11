@@ -75,16 +75,9 @@ figure {
 :root {
   text-align: center;
   box-sizing: border-box;
-  padding: 45px;
-  background: url("https://subtlepatterns.com/patterns/concrete_seamless.png")
-    center;
-  white-space: nowrap;
+ 
 }
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
+
 
 .profile_image {
   height: 100px;

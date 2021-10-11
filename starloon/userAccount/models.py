@@ -6,7 +6,7 @@ from PIL import Image
 # Extending User Model Using a One-To-One Link
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    avatar = models.ImageField(default='default.png', upload_to='images')
+    avatar = models.ImageField(default='default.png', upload_to='avatar-images')
 
     def save(self, *args, **kwargs):
         super().save()
