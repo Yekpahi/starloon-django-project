@@ -294,7 +294,7 @@ figure {
 .MainNav {
   margin: 0;
   padding: 10px;
-  background: rgb(250, 239, 239);
+  background: rgb(25, 21, 49);
   ul {
     margin: 0;
     padding: 0;
@@ -303,6 +303,7 @@ figure {
     li {
       display: inline;
       margin: 50px;
+      color:white;
      
 
     }
@@ -313,4 +314,213 @@ figure {
   height: 30px;
   border-radius: 15px;
 }
+
+//header
+
+
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    background-color: #000;
+}
+
+.navbar .logo{
+    font-size: 2.4rem;
+    color: #fff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.navbar i{
+    display: none;
+}
+
+.nav-links{
+    display: flex;
+}
+
+.nav-links li a{
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 0 1.1rem;
+}
+
+.nav-links li a:hover{
+    border-bottom: 1px solid #fff;
+    padding-bottom: 2px;
+}
+
+.sidebar{
+    display: none;
+}
+
+.showcase{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.showcase h1{
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 2.2rem;
+    padding: 0 2rem;
+    text-align: center;
+    word-spacing: 2px;
+}
+
+.showcase h3{
+    color: #f2f2f2;
+    font-size: 1.6rem;
+    word-spacing: 2px;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.btn{
+    border: none;
+    padding: 0.8rem 1.2rem;
+    font-size: 1.1rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    outline: none;
+    margin-top: 0.5rem;
+}
+
+.btn:hover{
+    background-color: rgb(31, 118, 172);
+    color: #fff;
+    transition: 0.25s ease;
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.75);
+    animation: openModal 0.3s ease;
+}
+
+.modal-container{
+    background-color: #fff;
+    margin: 100px auto;
+    width: 350px;
+    padding: 1rem 2rem 2rem 2rem;
+    border-radius: 10px;
+    position: relative;
+}
+
+.form h2{
+    text-align: center;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+.form-control{
+    position: relative;
+    margin-bottom: 15px;
+    padding-bottom: 20px;
+}
+
+.form-control label{
+    display: block;
+    margin-bottom: 4px;
+    color: #777;
+}
+
+.form-control input{
+    display: block;
+    width: 100%;
+    padding: 6px;
+    border-radius: 2px;
+    border: 1px solid #666;
+    outline: none;
+}
+
+.form .modalBtn{
+    border: none;
+    background-color: rgb(38, 136, 197);
+    color: #fff;
+    padding: 8px;
+    font-size: 1.1rem;
+    width: 100%;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: none;
+}
+
+.form .modalBtn:hover{
+    opacity: 0.9;
+}
+
+@media(max-width: 600px){
+    .navbar i{
+        display: inline-block;
+        color: #fff;
+        font-size: 1.75rem;
+        cursor: pointer;
+    }
+
+    .nav-links{
+        display: none;
+    }
+
+    .sidebar{
+        visibility: hidden;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: rgb(31, 118, 172);
+        display: inline-block;
+        height: 100%;
+        width: 200px;
+    }
+
+    .sidebar i{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: #fff;
+        font-size: 1.75rem;
+        cursor: pointer;
+    }
+
+    .side-nav-links{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        justify-content: space-evenly;
+    }
+
+    .side-nav-links li a{
+        color: #fff;
+        font-size: 1.2rem;
+    }
+
+    .side-nav-links li a:hover{
+        border-bottom: 1px solid #fff;
+        padding-bottom: 2px;
+    }
+}
+
+@keyframes openModal{
+  from{
+    opacity: 0;
+  }
+  
+  to{
+    opacity: 1;
+  }
+}
+
 // Footer main

@@ -86,17 +86,6 @@ figure img {
   margin: 20px;
 }
 
-@-webkit-keyframes cdp-in {
-  from {
-    transform: scale(1.5);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
 @keyframes cdp-in {
   from {
     transform: scale(1.5);
@@ -114,8 +103,7 @@ figure img {
   font-size: 0;
   z-index: 6;
   margin: 50px 0;
-  -webkit-animation: cdp-in 500ms ease both;
-          animation: cdp-in 500ms ease both;
+  animation: cdp-in 500ms ease both;
 }
 .cdp_i {
   font-size: 14px;
@@ -3777,8 +3765,7 @@ figure img {
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.75);
-  -webkit-animation: openModal 0.3s ease;
-          animation: openModal 0.3s ease;
+  animation: openModal 0.3s ease;
 }
 
 .modal-container {
@@ -3884,14 +3871,6 @@ figure img {
     padding-bottom: 2px;
   }
 }
-@-webkit-keyframes openModal {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 @keyframes openModal {
   from {
     opacity: 0;
@@ -3899,4 +3878,4 @@ figure img {
   to {
     opacity: 1;
   }
-}/*# sourceMappingURL=home.css.map */
+}

@@ -7,11 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page d'utilisateur</title>
     {% tailwind_css %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href=" {% static 'user/user.css' %}" />
+   
 </head>
 <body>
+
+<!-- NAVBAR-->
+{% include 'header/header.html' %}
+
+
     <!-- User Profile -->
 <div class="user-profile py-4">
     <div class="container">
@@ -177,5 +183,29 @@
     </div>
   </div>
   <!-- /User Profile -->
+  <!-- Script Header  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script>
+    $(window).resize(function(){
+  if ($(window).width() > 776) {  
+    $('.nav').css('display','block');
+  }else{
+    $('.nav').css('display','none');
+  }     
+});
+
+$('.hamburger').click(
+  function(){
+    if($('.nav').css('display')=='none'){
+      $('.nav').css('display','block');
+    }else{
+      $('.nav').css('display','none');
+    }
+  }
+)
+
+  </script>
+ <!-- Fin Script Header  -->
 </body>
 </html>

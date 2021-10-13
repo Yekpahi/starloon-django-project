@@ -1,0 +1,280 @@
+{% load static %} {% load tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.1.1/css/mdb.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <link rel="stylesheet" href=" {% static 'details/details.css' %}" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
+    {% tailwind_css %}
+  </head>
+  <body>
+    <!--  start navbar -->
+    <nav class="navbar navbar-light bg-faded navbar-fixed-top">
+      <button
+        class="navbar-toggler hidden-lg-up float-xs-right"
+        type="button"
+        data-toggle="collapse"
+        data-target="#main-navbar"
+        aria-controls="navbarResponsive"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      ></button>
+      <a class="navbar-brand" href="#" id="home"
+        ><span class="hidden-xs-down">Vous suivez --> </span> {{person.surname}} | {{ person.fullName}}</a
+      >
+      <img
+        class="headerPersonImage"
+        src="{{ person.personImage.url}}"
+        alt="sample image"
+      />
+      <div class="collapse navbar-toggleable-md" id="main-navbar">
+        <ul class="nav navbar-nav float-lg-right">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">Accueil</a>
+          </li>
+          <li class="nav-item">
+      
+            <a class="nav-link" href="{% url 'users-profile' %}"
+              >Bonjour <span> {{request.user}}</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'register' %}">Créer un compte</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Se connecter</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Se deconnecter</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#achievements">Faire un don </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#more">Notre équipe</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <section class="container cardhaut">
+        <div class="cardpresentation">
+          <div>
+            <h5>surnom</h5>
+            <h6>Nom et prenom</h6>
+          </div>
+          <img src="{{ person.personImage.url}}" alt="sample image" />
+        </div>
+
+        <div class="contenu-du-centre">
+          <div class="card1">
+            <h4>Petite bio</h4>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Reprehenderit vel aperiam dolor, quod animi provident sapiente
+              corrupti voluptates beatae porro aliquid minus consequatur ad et
+              placeat amet deserunt obcaecati? Praesentium? Lorem ipsum dolor,
+              sit amet consectetur adipisicing elit. Reprehenderit vel aperiam
+              dolor, quod animi provident sapiente corrupti voluptates beatae
+              porro
+            </p>
+          </div>
+          <div class="program">
+            <h4>Programme</h4>
+            <div class="program_wrapper">
+              <div class="terms-and-conditions">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+                  assumenda, ullam, sed quo ipsam officia asperiores minima
+                  excepturi eveniet reiciendis velit debitis temporibus
+                  explicabo. Incidunt sit itaque, reprehenderit fuga voluptatem
+                  officiis corrupti ipsa eveniet architecto dolorem magni facere
+                  doloribus aut veritatis sequi quia repellendus aperiam
+                  assumenda exercitationem optio praesentium debitis. Excepturi
+                  unde
+                </p>
+
+                <hr />
+              </div>
+              <button class="accept" disabled>Accept</button>
+            </div>
+          </div>
+          <div class="card1">
+            <h4>Enfance</h4>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Reprehenderit vel aperiam dolor, quod animi provident sapiente
+              corrupti voluptates beatae porro aliquid minus consequatur ad et
+              placeat amet deserunt obcaecati? Praesentium? Lorem ipsum dolor,
+              sit amet consectetur adipisicing elit. Reprehenderit vel aperiam
+              dolor, quod animi provident sapiente corrupti voluptates beatae
+              porro aliquid minus consequatur ad et placeat amet deserunt
+              obcaecati? Praesentium? Lorem ipsum dolor, sit amet consectetur
+              adipisicing elit. Reprehenderit vel aperiam dolor, quod animi
+              provident sapiente corrupti voluptates beatae porro aliquid minus
+              consequatur ad et placeat amet deserunt obcaecati? Praesentium?
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Reprehenderit vel aperiam dolor, quod animi provident sapiente
+              corrupti voluptates beatae porro aliquid minus consequatur ad et
+              placeat amet deserunt obcaecati? Praesentium?
+            </p>
+          </div>
+
+          <div class="card1">
+            <h4>Formation</h4>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Reprehenderit vel aperiam dolor, quod animi provident sapiente
+              corrupti voluptates beatae porro aliquid minus consequatur ad et
+              placeat amet deserunt obcaecati? Praesentium? Lorem ipsum dolor,
+              sit amet consectetur adipisicing elit. Reprehenderit vel aperiam
+              dolor, quod animi provident sapiente corrupti voluptates beatae
+              porro aliquid minus consequatur ad et placeat amet deserunt
+              obcaecati? Praesentium? Lorem ipsum dolor, sit amet consectetur
+              adipisicing elit. Reprehenderit vel aperiam dolor, quod animi
+              provident sapiente corrupti voluptates beatae porro aliquid minus
+              consequatur ad et placeat amet deserunt obcaecati? Praesentium?
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Reprehenderit vel aperiam dolor, quod animi provident sapiente
+              corrupti voluptates beatae porro aliquid minus consequatur ad et
+              placeat amet deserunt obcaecati? Praesentium?
+            </p>
+          </div>
+
+          <div class="card1">
+            <h4>Carrière</h4>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Reprehenderit vel aperiam dolor, quod animi provident sapiente
+              corrupti voluptates beatae porro aliquid minus consequatur ad et
+              placeat amet deserunt obcaecati? Praesentium? Lorem ipsum dolor,
+              sit amet consectetur adipisicing elit. Reprehenderit vel aperiam
+              dolor, quod animi provident sapiente corrupti voluptates beatae
+              porro aliquid minus consequatur ad et placeat amet deserunt
+              obcaecati? Praesentium? Lorem ipsum dolor, sit amet consectetur
+              adipisicing elit. Reprehenderit vel aperiam dolor, quod animi
+              provident sapiente corrupti voluptates beatae porro aliquid minus
+              consequatur ad et placeat amet deserunt obcaecati? Praesentium?
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Reprehenderit vel aperiam dolor, quod animi provident sapiente
+              corrupti voluptates beatae porro aliquid minus consequatur ad et
+              placeat amet deserunt obcaecati? Praesentium? Lorem ipsum dolor,
+              sit amet consectetur adipisicing elit. Reprehenderit vel aperiam
+              dolor, quod animi provident sapiente corrupti voluptates beatae
+              porro aliquid minus consequatur ad et placeat amet deserunt
+              obcaecati? Praesentium? Lorem ipsum dolor, sit amet consectetur
+              adipisicing elit. Reprehenderit vel aperiam dolor, quod animi
+              provident sapiente corrupti voluptates beatae porro aliquid minus
+              consequatur ad et placeat amet deserunt obcaecati? Praesentium?
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Reprehenderit vel aperiam dolor, quod animi provident sapiente
+              corrupti voluptates beatae porro aliquid minus consequatur ad et
+              placeat amet deserunt obcaecati? Praesentium? Lorem ipsum dolor,
+              sit amet consectetur adipisicing elit. Reprehenderit vel aperiam
+              dolor, quod animi provident sapiente corrupti voluptates beatae
+              porro aliquid minus consequatur ad et placeat amet deserunt
+              obcaecati? Praesentium?
+            </p>
+          </div>
+          <div class="card1">
+            <h4>Les oeuvres</h4>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Reprehenderit vel aperiam dolor, quod animi provident sapiente
+              corrupti voluptates beatae porro aliquid minus consequatur ad et
+              placeat amet deserunt obcaecati? Praesentium? Lorem ipsum dolor,
+              sit amet consectetur adipisicing elit. Reprehenderit vel aperiam
+              dolor, quod animi provident sapiente corrupti voluptates beatae
+              porro aliquid minus consequatur ad et placeat amet deserunt
+              obcaecati? Praesentium? Lorem ipsum dolor, sit amet consectetur
+              adipisicing elit. Reprehenderit vel aperiam dolor, quod animi
+              provident sapiente corrupti voluptates beatae porro aliquid minus
+              consequatur ad et placeat amet deserunt obcaecati? Praesentium?
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Reprehenderit vel aperiam dolor, quod animi provident sapiente
+              corrupti voluptates beatae porro aliquid minus consequatur ad et
+              placeat amet deserunt obcaecati? Praesentium? Lorem ipsum dolor,
+              sit amet consectetur adipisicing elit. Reprehenderit vel aperiam
+              dolor, quod animi provident sapiente corrupti voluptates beatae
+              porro aliquid minus consequatur ad et placeat amet deserunt
+              obcaecati? Praesentium? Lorem ipsum dolor, sit amet consectetur
+              adipisicing elit. Reprehenderit vel aperiam dolor, quod animi
+              provident sapiente corrupti voluptates beatae porro aliquid minus
+              consequatur ad et placeat amet deserunt obcaecati? Praesentium?
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Reprehenderit vel aperiam dolor, quod animi provident sapiente
+              corrupti voluptates beatae porro aliquid minus consequatur ad et
+              placeat amet deserunt obcaecati? Praesentium? Lorem ipsum dolor,
+              sit amet consectetur adipisicing elit. Reprehenderit vel aperiam
+              dolor, quod animi provident sapiente corrupti voluptates beatae
+              porro aliquid minus consequatur ad et placeat amet deserunt
+              obcaecati? Praesentium?
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="cardside">
+        <img src="{{ person.detailscouverture.url}}" alt="sample image" />
+      </section>
+      <section class="resumedetail">
+        <h5>Programme</h5>
+        <h6>Titre 1</h6>
+        <h6>Titre 1</h6>
+        <h6>Titre 1</h6>
+        <h6>Titre 1</h6>
+        <h6>Titre 1</h6>
+        <h6>Titre 1</h6>
+        <h6>Titre 1</h6>
+        <h6>Titre 1</h6>
+        <h6>Titre 1</h6>
+        <h6>Titre 1</h6>
+      </section>
+    </main>
+
+    <!-- start footer -->
+
+    <!--  end footer -->
+    <script>
+      const terms = document.querySelector(".terms-and-conditions");
+      const button = document.querySelector(".accept");
+
+      function obCallback(payload) {
+        if (payload[0].intersectionRatio === 1) {
+          button.disabled = false;
+        } else {
+          button.disabled = true;
+        }
+      }
+
+      const ob = new IntersectionObserver(obCallback, {
+        root: terms,
+        threshold: 1,
+      });
+
+      ob.observe(terms.lastElementChild);
+    </script>
+  </body>
+</html>

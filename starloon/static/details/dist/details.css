@@ -1,0 +1,219 @@
+body {
+  line-height: 2;
+}
+
+.navbar.navbar-light .nav-item a:hover {
+  color: #666;
+}
+
+.hero-section {
+  height: 100vh;
+  margin-top: 55px;
+}
+
+.hero-left {
+  margin-top: 200px;
+}
+
+.date {
+  font-size: 0.6em;
+  letter-spacing: 2px;
+}
+
+.hero-img {
+  margin-top: -40px;
+}
+
+.bio-section p {
+  padding: 0 20px;
+}
+
+.bio-section,
+.achievements-section {
+  background: #fbfbfb;
+  padding: 90px 0 90px;
+}
+
+.bio-section h2,
+.gallery-section h2,
+.achievements-section h2,
+.more-section h2 {
+  margin-bottom: 40px;
+}
+
+.gallery-section,
+.more-section {
+  padding: 70px 0 70px;
+}
+
+.carousel-inner > .carousel-item > img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.achievements-section .container {
+  padding: 0 35px;
+}
+
+.achievements-section ul > li {
+  padding-bottom: 25px;
+}
+
+.blockquote {
+  margin-top: 9.375em;
+}
+
+.main-footer {
+  background: #fbfbfb;
+  text-align: center;
+  padding: 20px 0 0;
+}
+
+@media screen and (max-width: 991px) {
+  #main-navbar {
+    clear: both;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .hero-img {
+    margin-top: 80px;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .hero-img {
+    margin-top: 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .hero-left {
+    margin: 90px 0 50px;
+  }
+
+  .name {
+    font-size: 3rem;
+    padding-top: 80px;
+  }
+
+  .date {
+    font-size: 1.1125rem;
+  }
+
+  .more-left {
+    margin-top: -175px;
+  }
+}
+.cardpresentation {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  padding: 30px;
+  margin-bottom: 20px;
+}
+.cardpresentation img {
+  width: 160px;
+  height: 160px;
+  border-radius: 80px;
+  position: relative;
+  left: 80%;
+}
+
+.cardside {
+  padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  width: 20%;
+  position: absolute;
+  left: 8%;
+  top: 100px;
+}
+.cardside img {
+  width: 100%;
+  height: 400px;
+}
+
+.resumedetail {
+  padding: 5px;
+  margin-top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  width: 20%;
+  position: absolute;
+  left: 8%;
+  top: 520px;
+}
+
+.cardhaut {
+  position: relative;
+  top: 100px;
+}
+
+.contenu-du-centre {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  margin-bottom: 20px;
+}
+
+.card1 {
+  margin-top: 10px;
+  padding: 30px;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, #d1d5db 0px 0px 0px 1px inset;
+}
+
+.program {
+  background: #666;
+  margin-top: 10px;
+  padding: 30px;
+  width: 60%;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, #d1d5db 0px 0px 0px 1px inset;
+}
+.program h4 {
+  color: #fbfbfb;
+}
+
+/* scroll bar programme*/
+.program_wrapper {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid black;
+  background: white;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+button {
+  background: #ff0060;
+  color: white;
+  font-size: 1rem;
+  padding: 20px;
+  transition: all 0.2s;
+}
+
+button[disabled] {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.terms-and-conditions {
+  overflow-y: scroll;
+}
+
+.headerPersonImage {
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  padding: 0;
+  margin: 0;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}

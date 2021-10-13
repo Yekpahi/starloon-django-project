@@ -18,6 +18,9 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
     <link
       rel="stylesheet"
@@ -29,26 +32,14 @@
     <link rel="stylesheet" href=" {% static 'styles.css' %}" />
   </head>
   <body>
-    <nav class="MainNav">
-      <ul>
-        <li>Nom du site</li>
-        <li>Créer un compte</li>
-        <li>Se connecter</li>
-        <li>se deconnecter</li>
-        <li>
-          <a href="{% url 'users-profile' %}">
-        
-            <img
-              class="userImageHomme"
-              src="{{ user.profile.avatar.url }}"
-              alt=""
-          />
-          {{ user.username }}
-          </a>
-        </li>
-      </ul>
-    </nav>
+
+
+    {% include 'header/header.html' %}
+
+
     <ul class="slides">
+
+
     {% if persons %}
   
       {% for person in persons %}
@@ -114,9 +105,44 @@
     </form>
 
     <footer class=""></footer>
+<script>
+const modalBtn = document.getElementById('modalBtn');
+const modal = document.getElementById('modal');
+const btn = document.getElementById('btn');
+const sidebar = document.getElementById('sidebar');
+const openNav = document.getElementById('openNav');
+const closeNav = document.getElementById('closeNav');
 
+// Open modal
+const openModal = () => {
+    modal.style.display = 'inline-block';
+}
+
+// Open navbar
+const openNavbar = () => {
+    sidebar.style.visibility = 'visible';
+}
+
+// Close navbar
+const closeNavbar = () => {
+    sidebar.style.visibility = 'hidden';
+}
+
+
+// Event listeners
+btn.addEventListener('click', openModal);
+openNav.addEventListener('click', openNavbar);
+closeNav.addEventListener('click', closeNavbar);
+window.addEventListener('click', e => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+    }
+});
+
+</script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   
   </body>
 </html>
 
