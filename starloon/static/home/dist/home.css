@@ -71,11 +71,6 @@ figure img {
   border-radius: 5px;
 }
 
-:root {
-  text-align: center;
-  box-sizing: border-box;
-}
-
 .profile_image {
   height: 100px;
   width: 100px;
@@ -3585,6 +3580,7 @@ figure img {
 .bar-de-recherche {
   position: relative;
   top: 550px;
+  text-align: center;
 }
 .bar-de-recherche input {
   height: 50px;
@@ -3877,5 +3873,13 @@ figure img {
   }
   to {
     opacity: 1;
+  }
+}
+@media (min-width: 768px) {
+  .slides {
+    position: absolute;
+    left: 22%;
+    display: flex;
+    flex-direction: row;
   }
 }

@@ -71,11 +71,6 @@ figure img {
   border-radius: 5px;
 }
 
-:root {
-  text-align: center;
-  box-sizing: border-box;
-}
-
 .profile_image {
   height: 100px;
   width: 100px;
@@ -3597,6 +3592,7 @@ figure img {
 .bar-de-recherche {
   position: relative;
   top: 550px;
+  text-align: center;
 }
 .bar-de-recherche input {
   height: 50px;
@@ -3898,5 +3894,22 @@ figure img {
   }
   to {
     opacity: 1;
+  }
+}
+@media screen and (max-width: 900px) {
+  .portrait {
+    border: 5px solid #000;
+    margin-top: 20px;
+    left: -17%;
+    width: 80%;
+  }
+}
+@media screen and (min-width: 901px) and (max-width: 1650px) {
+  .portrait {
+    border: 5px solid #000;
+    margin-top: 20px;
+    left: -12%;
+    width: 80%;
+    text-align: center;
   }
 }/*# sourceMappingURL=home.css.map */

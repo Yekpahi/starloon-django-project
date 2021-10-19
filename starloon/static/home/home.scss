@@ -72,11 +72,6 @@ figure {
   padding: 10px;
   border-radius: 5px;
 }
-:root {
-  text-align: center;
-  box-sizing: border-box;
- 
-}
 
 
 .profile_image {
@@ -217,6 +212,7 @@ figure {
 .bar-de-recherche {
   position: relative;
   top: 550px;
+  text-align: center;
   input {
     height: 50px;
     width: 50%;
@@ -279,9 +275,12 @@ figure {
   }
 }
 
+
+
 .slides {
   position: absolute;
   left: 22%;
+
   display: flex;
   flex-direction: row;
 }
@@ -520,6 +519,26 @@ figure {
   
   to{
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .portrait {
+    border:5px solid #000;
+    margin-top: 20px;
+    left: -17%;
+    width: 80%;
+  }
+}
+
+
+@media screen and (min-width: 901px) and (max-width: 1650px) {
+  .portrait {
+    border:5px solid #000;
+    margin-top: 20px;
+    left: -12%;
+    width: 80%;
+    text-align: center;
   }
 }
 

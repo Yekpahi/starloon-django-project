@@ -8,114 +8,300 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!-- Google Font -->
-        <link rel="stylesheet" href=" {% static 'details/detail.css' %}" />
- 
- 	<link rel="stylesheet" type="text/css" href="style/main.css">
-		<link rel="stylesheet" type="text/css" href="style/fonts/style.css">
-		<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href=" {% static 'details/detail.css' %}" />
+
+    <link rel="stylesheet" type="text/css" href="style/fonts/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
     {% tailwind_css %}
   </head>
- 	<body>
-				
+  <body>
+    {% include 'header/header.html' %}
+    <main class="content-wrapper">
+      <header class="hero-header">
+        <section class="intro-sec">
+          <div class="dddd"></div>
+          <img
+            id="cover-detail-pic"
+            src="{% static 'images/imgala.jpg' %}"
+            alt="My image"
+          />
+          <img
+            id="profile-detail-pic"
+            src="{% static 'images/profile.jpg' %}"
+            alt=""
+          />
+          <h2 id="details-surname">DJ ARAFAT</h2>
+          <h5>Houon Ange Didier</h5>
+        </section>
 
-		<header class="bottom-header">
+        <section class="home-hiw">
+          <img
+            src="{% static 'images/detail-cover-right.jpg' %}"
+            alt=""
+            srcset=""
+          />
+          <div id="details-infos">
+            <h4>Information</h4>
+            <h5>rrr</h5>
+            <h5>rrr</h5>
+            <h5>rrr</h5>
+            <h5>rrr</h5>
+            <h4>Information</h4>
+            <h5>rrr</h5>
+            <h5>rrr</h5>
+            <h5>rrr</h5>
+            <h5>rrr</h5>
+          </div>
+        </section>
 
-			<nav class="navbar-bottom navbar">
+        <section>
+          <div class="list">
+            <h3 class="list-title">Toutes sur ...</h3>
 
-				<button class="menu-toggle toggler">
-					<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" x="0px" y="0px" viewBox="0 0 100 125"><g transform="translate(0,-952.36218)"><path d="m 16,979.36218 c -1.65685,0 -3,1.3431 -3,3 0,1.6568 1.34315,3 3,3 l 68,0 c 1.65685,0 3,-1.3432 3,-3 0,-1.6569 -1.34315,-3 -3,-3 z m 0,20 c -1.65685,0 -3,1.34312 -3,3.00002 0,1.6568 1.34315,3 3,3 l 68,0 c 1.65685,0 3,-1.3432 3,-3 0,-1.6569 -1.34315,-3.00002 -3,-3.00002 z m 0,20.00002 c -1.65685,0 -3,1.3431 -3,3 0,1.6568 1.34315,3 3,3 l 68,0 c 1.65685,0 3,-1.3432 3,-3 0,-1.6569 -1.34315,-3 -3,-3 z" style="text-indent:0;text-transform:none;direction:ltr;enable-background:accumulate;" fill-opacity="1" stroke="none" marker="none" visibility="visible" display="inline" overflow="visible"/></g></svg>
-				</button>
-				
-				<ul class="nav-links">
-
-					<div class="toggler cancel-btn">
-						<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" x="0px" y="0px" viewBox="0 0 100 125"><g transform="translate(0,-952.36218)"><path style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;writing-mode:lr-tb;text-anchor:start;opacity:1;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3.99999976000000010;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans" d="M 15 8 C 13.542451 8 12.003446 8.50749 10.59375 9.625 C 9.1840537 10.74251 8 12.64176 8 15 L 8 85 C 8 87.3583 9.1840606 89.2575 10.59375 90.375 C 12.003439 91.4925 13.542421 92 15 92 L 85 92 C 86.457579 92 87.996548 91.4925 89.40625 90.375 C 90.815952 89.2575 92 87.3583 92 85 L 92 15 C 92 12.64175 90.815958 10.74251 89.40625 9.625 C 87.996542 8.50749 86.457549 8 85 8 C 61.83749 7.99997 38.162516 7.99994 15 8 z M 15 12 C 38.162506 11.99994 61.83749 11.99997 85 12 C 85.325201 12 86.292896 12.23901 86.9375 12.75 C 87.582104 13.26099 88 13.8723 88 15 L 88 85 C 88 86.1277 87.582111 86.70765 86.9375 87.21875 C 86.292889 87.72975 85.325171 88 85 88 L 15 88 C 14.674829 88 13.707098 87.72975 13.0625 87.21875 C 12.417902 86.70765 12 86.1277 12 85 L 12 15 C 12 13.87229 12.417909 13.26099 13.0625 12.75 C 13.707091 12.23901 14.674799 12 15 12 z M 27.78125 25.96875 A 2.0001999 2.0001999 0 0 0 26.59375 29.40625 L 47.1875 50 L 26.59375 70.5625 A 2.0001999 2.0001999 0 1 0 29.40625 73.40625 L 50 52.8125 L 70.59375 73.40625 A 2.0001999 2.0001999 0 1 0 73.40625 70.5625 L 52.8125 50 L 73.40625 29.40625 A 2.0001999 2.0001999 0 0 0 71.75 25.96875 A 2.0001999 2.0001999 0 0 0 70.59375 26.5625 L 50 47.15625 L 29.40625 26.5625 A 2.0001999 2.0001999 0 0 0 27.78125 25.96875 z " transform="translate(0,952.36218)"/></g></svg>
-					</div>
-
-					<li><a href="index.html" class="active">Home</a></li>
-					<li><a href="explore.html">Explore</a></li>
-					<li><a href="tools.html">Tools</a></li>
-					<li><a href="resources.html">Resources</a>
-            <ul class="sub_links">
-              <li><a href="#">Events</a></li>
-              <li><a href="#">Stuffs</a></li>
-              <li><a href="#">Maybe me</a></li>
+            <ul class="list-items">
+              <li><a href="#bio">petite bio</a> </li>
+              <li><a href="#famille">Famille</a> </li>
+              <li><a href="#parcoursS">Parcours Scolaire</a></li>
+              <li><a href="#parcoursP">Parcours Professionnel</a></li>
+              <li><a href="#recompense">Recompenses</a></li>
+              <li ><a href="#oeuvre">Oeuvres</a></li>
+              <li><a href="#bibliotheque">Bibliothèque</a></li>
+              <li><a href="#cv">CV</a></li>
             </ul>
-          </li>
-					<li><a href="contact.html">Hire a writer</a></li>
-				</ul>
+          </div>
+        </section>
+        <section id="main-section">
+          <div  class="chapter">
+            <h3 id="bio">Petite Bio</h3>
+            <p>
+              Internet n’est pas le seul réseau. Il existe un autre réseau plus
+              performant. Je ne t’apprendrais rien en te disant qu’Internet a
+              été crée par l’armée Américaine dans un but militaire. Internet
+              n’était que le prototype. Un autre réseau a été créé pour les
+              militaires. Complètement indépendant d’Internet. Tirant des leçons
+              du premier réseau, le petit frère d’Internet est devenue un grand
+              frère. David se rappelait de ce programme mélangeant deux
+              anciennes technologies. Il s’en souvenait très bien, cinq années
+              de travail acharné pour réaliser un vieux rêve d’enfant un peu
+              solitaire. Il voulait un ami et il avait trouvé en l’informatique
+              la possibilité d’avoir cet ami. Un ami capable de réfléchir vite,
+              exempt de sentiment. David se rappelait de ce programme mélangeant
+              deux anciennes technologies. Il s’en souvenait très bien, cinq
+              années de travail acharné pour réaliser un vieux rêve d’enfant un
+              peu solitaire. Il voulait un ami et il avait trouvé en
+              l’informatique la possibilité d’avoir cet ami. Un ami capable de
+              réfléchir vite, exempt de sentiment.
+            </p>
+          </div>
+		
+          <div  class="chapter">
+            <h3 id ="famille">Famille</h3>
+			<p>
+				Un autre réseau a été créé pour les
+				militaires. Complètement indépendant d’Internet. Tirant des leçons
+				du premier réseau, le petit frère d’Internet est devenue un grand
+				frère. David se rappelait de ce programme mélangeant deux
+				anciennes technologies. Il s’en souvenait très bien, cinq années
+				de travail acharné pour réaliser un vieux rêve d’enfant un peu
+				solitaire. Il voulait un ami et il avait trouvé en l’informatique
+				la possibilité d’avoir cet ami. Un ami capable de réfléchir vite,
+				exempt de sentiment. David se rappelait de ce programme mélangeant
+				deux anciennes technologies. Il s’en souvenait très bien, cinq
+				années de travail acharné pour réaliser un vieux rêve d’enfant un
+				peu solitaire. Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.
+			  </p>
+          </div>
+          <div  class="chapter">
+            <h3 id="parcoursS" >Parcours scolaire</h3>
+			<p>
+				Un autre réseau a été créé pour les
+				militaires. Complètement indépendant d’Internet. Tirant des leçons
+				du premier réseau, le petit frère d’Internet est devenue un grand
+				frère. David se rappelait de ce programme mélangeant deux
+				anciennes technologies. Il s’en souvenait très bien, cinq années
+				de travail acharné pour réaliser un vieux rêve d’enfant un peu
+				solitaire. Il voulait un ami et il avait trouvé en l’informatique
+				la possibilité d’avoir cet ami. Un ami capable de réfléchir vite,
+				exempt de sentiment. David se rappelait de ce programme mélangeant
+				deux anciennes technologies. Il s’en souvenait très bien, cinq
+				années de travail acharné pour réaliser un vieux rêve d’enfant un
+				peu solitaire. Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.
+				Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.
+			  </p>
+          </div>
+		  <div  class="chapter">
+            <h3 id="parcoursP">Parcours Professionnel</h3>
+			<p>
+				Un autre réseau a été créé pour les
+				militaires. Complètement indépendant d’Internet. Tirant des leçons
+				du premier réseau, le petit frère d’Internet est devenue un grand
+				frère. David se rappelait de ce programme mélangeant deux
+				anciennes technologies. Il s’en souvenait très bien, cinq années
+				de travail acharné pour réaliser un vieux rêve d’enfant un peu
+				solitaire. Il voulait un ami et il avait trouvé en l’informatique
+				la possibilité d’avoir cet ami. Un ami capable de réfléchir vite,
+				exempt de sentiment. David se rappelait de ce programme mélangeant
+				deux anciennes technologies. Il s’en souvenait très bien, cinq
+				années de travail acharné pour réaliser un vieux rêve d’enfant un
+				peu solitaire. Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.
+				Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.
+			  </p>
+          </div>
+		  <div  class="chapter">
+            <h3 id="recompense">Recompenses</h3>
+			<p>
+				Un autre réseau a été créé pour les
+				militaires. Complètement indépendant d’Internet. Tirant des leçons
+				du premier réseau, le petit frère d’Internet est devenue un grand
+				frère. David se rappelait de ce programme mélangeant deux
+				anciennes technologies. Il s’en souvenait très bien, cinq années
+				de travail acharné pour réaliser un vieux rêve d’enfant un peu
+				solitaire. Il voulait un ami et il avait trouvé en l’informatique
+				la possibilité d’avoir cet ami. Un ami capable de réfléchir vite,
+				exempt de sentiment. David se rappelait de ce programme mélangeant
+				deux anciennes technologies. Il s’en souvenait très bien, cinq
+				années de travail acharné pour réaliser un vieux rêve d’enfant un
+				peu solitaire. Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.
+				Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.
+			  </p>
+          </div>
+		  <div  class="chapter">
+            <h3 id="oeuvre">Oeuvres</h3>
+			<p>
+				Un autre réseau a été créé pour les
+				militaires. Complètement indépendant d’Internet. Tirant des leçons
+				du premier réseau, le petit frère d’Internet est devenue un grand
+				frère. David se rappelait de ce programme mélangeant deux
+				anciennes technologies. Il s’en souvenait très bien, cinq années
+				de travail acharné pour réaliser un vieux rêve d’enfant un peu
+				solitaire. Il voulait un ami et il avait trouvé en l’informatique
+				la possibilité d’avoir cet ami. Un ami capable de réfléchir vite,
+				exempt de sentiment. David se rappelait de ce programme mélangeant
+				deux anciennes technologies. Il s’en souvenait très bien, cinq
+				années de travail acharné pour réaliser un vieux rêve d’enfant un
+				peu solitaire. Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.
+				Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.
+			  </p>
+          </div>
+		  <div  class="chapter">
+            <h3 id="bibliotheque">Bibliothèque</h3>
+			<p>
+				Un autre réseau a été créé pour les
+				militaires. Complètement indépendant d’Internet. Tirant des leçons
+				du premier réseau, le petit frère d’Internet est devenue un grand
+				frère. David se rappelait de ce programme mélangeant deux
+				anciennes technologies. Il s’en souvenait très bien, cinq années
+				de travail acharné pour réaliser un vieux rêve d’enfant un peu
+				solitaire. Il voulait un ami et il avait trouvé en l’informatique
+				la possibilité d’avoir cet ami. Un ami capable de réfléchir vite,
+				exempt de sentiment. David se rappelait de ce programme mélangeant
+				deux anciennes technologies. Il s’en souvenait très bien, cinq
+				années de travail acharné pour réaliser un vieux rêve d’enfant un
+				peu solitaire. Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.
+				Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.
+			  </p>
+          </div>
+		  <div  class="chapter">
+            <h3 id="cv">CV</h3>
+			<p>
+				Un autre réseau a été créé pour les
+				militaires. Complètement indépendant d’Internet. Tirant des leçons
+				du premier réseau, le petit frère d’Internet est devenue un grand
+				frère. David se rappelait de ce programme mélangeant deux
+				anciennes technologies. Il s’en souvenait très bien, cinq années
+				de travail acharné pour réaliser un vieux rêve d’enfant un peu
+				solitaire. Il voulait un ami et il avait trouvé en l’informatique
+				la possibilité d’avoir cet ami. Un ami capable de réfléchir vite,
+				exempt de sentiment. David se rappelait de ce programme mélangeant
+				deux anciennes technologies. Il s’en souvenait très bien, cinq
+				années de travail acharné pour réaliser un vieux rêve d’enfant un
+				peu solitaire. Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.
+				Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.Il voulait un ami et il avait trouvé en
+				l’informatique la possibilité d’avoir cet ami. Un ami capable de
+				réfléchir vite, exempt de sentiment.
+			  </p>
+          </div>
+        </section>
+      </header>
+    </main>
 
-				<button class="search-toggle toggler">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 187.5" fill="none" x="0px" y="0px"><path fill-rule="evenodd" clip-rule="evenodd" d="M49.3373 88.7246C72.1553 86.5685 90.0001 67.5756 90 44.4643C89.9999 19.9072 69.8528 -4.04609e-05 45 0C20.1472 0 0 19.9074 0 44.4643C0 67.9404 18.4127 87.1671 41.7469 88.8141L41.7469 116.786C41.747 118.561 43.4461 120 45.5421 120C47.6381 120 49.3372 118.561 49.3373 116.786L49.3373 88.7246ZM82.4096 44.4643C82.4095 64.879 65.6607 81.4285 45 81.4285C24.3392 81.4286 7.59032 64.8791 7.59024 44.4642C7.59032 24.0494 24.3392 7.49997 44.9999 7.49993C65.6608 7.50001 82.4095 24.0494 82.4096 44.4643Z" transform="translate(0 63.6397) rotate(-45)" /></svg>
-				</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      const $body = $("body");
+      const $menuOpen = $(".menu-toggle");
+      const $menuClose = $(".cancel-btn");
+      const $btnSearch = $(".search-toggle");
+      $(function () {
+        $menuOpen.click(function () {
+          $body.addClass("menu-open");
+        });
+        $menuClose.click(function () {
+          $body.removeClass("menu-open");
+        });
 
-				<form class="searchbar">
-					
-					<input type="search" name="" placeholder="Search for a topic">
-
-				</form>
-
-			</nav>
-
-		</header>
-
-		<main class="content-wrapper">
-			
-			<header class="hero-header">
-				
-				<div class="intro-sec">
-					<div class="dddd">
-					
-					</div>
-					<img id ="cover-detail-pic" src="{% static 'images/imgala.jpg' %}" alt="My image">
-					<img id ="profile-detail-pic" src="{% static 'images/profile.jpg' %}" alt="">
-					<h2 id="details-surname">DJ ARAFAT</h2>
-					<h5>Houon Ange Didier</h5>
-
-				</div>
-
-				<div class="home-hiw">
-					<img src="{% static 'images/detail-cover-right.jpg' %}" alt="" srcset="">
-					<div id="details-infos">
-						<h4>Information</h4>
-						<h5>rrr</h5>
-						<h5>rrr</h5>
-						<h5>rrr</h5>
-						<h5>rrr</h5>
-						
-					</div>
-
-				</div>
-			</header>
-			
-		</main>
-      	
-
-
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>   
-<script>
-
-const $body = $('body');
-			const $menuOpen = $('.menu-toggle');
-			const $menuClose = $('.cancel-btn');
-			const $btnSearch = $('.search-toggle');
-			$(function () {
-			    $menuOpen.click(function() {
-			        $body.addClass('menu-open');   
-			    });
-			    $menuClose.click(function() {
-			        $body.removeClass('menu-open');
-			    });
-
-				$btnSearch.click(function() {
-					$body.toggleClass('search-open');
-				});
-
-			});
-</script>
+        $btnSearch.click(function () {
+          $body.toggleClass("search-open");
+        });
+      });
+    </script>
   </body>
 </html>
