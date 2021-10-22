@@ -479,17 +479,22 @@ p {
   top: 0%;
   left: 66%;
   width: 32%;
-  border-radius: 3px;
-  background: rgb(218, 166, 166);
-  box-shadow: 0 12px 18px 2px rgba(34, 0, 51, 0.04),
-    0 6px 22px 4px rgba(7, 48, 114, 0.06),
-    0 6px 10px -4px rgba(14, 13, 26, 0.06);
+ 
   img {
     width: 100%;
-    height: 400px;
+    height: 350px;
   }
   #details-infos {
-    background: #f3f4f5;
+    background: #c7d5e4;
+    padding: 10px;
+    .info-title {
+      margin-bottom: 10px;
+      margin-top: 5px;
+      border: 1px solid black;
+      padding: 5px;
+      background: #035883;
+      color: #ffffff;
+    }
   }
 }
 
@@ -702,4 +707,7 @@ p {
       text-justify: inter-word;
     }
   }
+}
+.ultitre{
+  margin-bottom: 20px;
 }
