@@ -1,61 +1,94 @@
 {% load static %} {% load tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Header</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href=" {% static 'header/header.css' %}" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Header</title>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href=" {% static 'header/header.css' %}" />
+  </head>
+  <body>
+    <!-- the menu starts here -->
+    <div class="navbara">
+      <label for="togglericon" class="toggler" checked></label>
+      <input type="checkbox" id="togglericona" class="toggler" />
 
-		<!-- the menu starts here -->
-		<div class="navbara">
-	  
-		  <label for="togglericon" class="toggler" checked></label>
-		  <input type="checkbox" id="togglericona" class="toggler" />
-	  
-		  <div class="branda">
-			<span class="branda-icon">⚛</span>
-			<span class="branda-name">Brand Name</span>
-		  </div>
-	  
-		  <div class="nava">
-			<!-- reposition the menu with: -->
-			<!-- div class="nav at-center" -->
-			<!-- div class="nav at-right"  -->
-	  
-			<a href="{% url 'index' %}"><i class="fa fa-home" style="font-size:24px;color:black;"></i></a>
-			<a href="#about">About</a>
-	  
-			<div class="">
-			  <a href="{% url 'users-profile' %}"   for="toggle-1"><i class='fas fa-user-alt' style='font-size:24px'></i> <span> {{request.user}}</span></a>
-			</div>
-	  
-			<div class="">
-			  <a href="{% url 'register' %}" for="toggle-2">Créer compte</a>
-			
-			</div>
+      <div class="branda">
+        <span class="branda-icon">⚛</span>
+        <span class="branda-name">Brand Name</span>
+      </div>
 
-			<div class="">
-				<a href="{% url 'login' %}" for="toggle-2">Se connecter</a>
-			  
-			  </div>
-			  <div class="">
-				<a href="{% url 'logout' %}" for="toggle-2">Se deconnecter</a>
-			  
-			  </div>
-			<a href="#">Contact</a>
-			<form>
-			  <input type="text" placeholder="search" name="search" />
-			  <button>🔎</button>
-			</form>
+      <div class="nava">
+        <!-- reposition the menu with: -->
+        <!-- div class="nav at-center" -->
+        <!-- div class="nav at-right"  -->
+		<div class="">
+        <a href="{% url 'index' %}"
+          ><i class="fa fa-home" style="font-size: 24px; color: black"></i
+        ></a>
+	</div>
+        {% if user.is_authenticated %}
+        <div  class="headeruserprofile">
+        
+	<img  class="userImage " src="{{ user.profile.avatar.url }}" alt="" />
+	<h5>vous</h5><i onclick="myFunction()" class="fa fa-sort-desc dropdown-btn" style="font-size:24px"></i>
+           
+		  <div class="dropdown-menu">
+			  <img src="{{ user.profile.avatar.url }}" alt="">
+			<a href="{% url 'users-profile' %}" for="toggle-1" ><span> {{request.user}}</span></a>
+			<a href="#">Link 2</a>
+			<a href="#">Link 3</a>
 		  </div>
-		</div>
-		<!-- the menu ends here -->
-	  
+
+        </div>
 		
-</body>
+		<div class="">
+			<a href="{% url 'logout' %}" for="toggle-2">Se deconnecter</a>
+		  </div>
+        {% else %}
+        <div class="">
+          <a href="{% url 'register' %}" for="toggle-2">Créer compte</a>
+        </div>
+		<div class="">
+			<a href="{% url 'login' %}" for="toggle-2">Se connecter</a>
+		  </div>
+        {% endif %}
+
+        <form class="form-search">
+          <input type="text" placeholder="search" name="search" />
+          <button>🔎</button>
+        </form>
+      </div>
+    </div>
+ <script>
+/*
+ * Toggle between hiding and showing the dropdown content when the user
+ * clicks on the button,
+ */
+ const dropdownButton = document.querySelector('.dropdown-btn');
+dropdownButton.addEventListener('click', (event) => {
+  const dropdownMenu = event.target.parentNode.querySelector('.dropdown-menu');
+  dropdownMenu.classList.toggle("show");
+}, false);
+
+// Close the dropdown menu if the user clicks outside of it
+window.addEventListener('click', function(event) {
+  if (event.target.matches('.dropdown-btn')) {
+    return;
+  }
+  const dropdowns = document.getElementsByClassName("dropdown-menu");
+  dropdowns.forEach(dropdown => {
+    if (dropdown.classList.contains('show')) {
+      dropdown.classList.remove('show');
+    }
+  });
+}, false);
+ </script>
+  </body>
 </html>
